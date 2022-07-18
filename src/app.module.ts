@@ -4,6 +4,8 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
 import { AccountModule } from './account/account.module';
+import { GroupsModule } from './groups/groups.module';
+import { MessagesModule } from './messages/messages.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -15,7 +17,7 @@ import { AccountModule } from './account/account.module';
     database: 'wechat',
     autoLoadEntities: true,
     synchronize: true
-  }), UsersModule, AccountModule],
+  }), UsersModule, AccountModule, GroupsModule, MessagesModule],
   controllers: [AppController],
   providers: [AppService],
 })
